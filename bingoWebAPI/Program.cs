@@ -3,7 +3,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace bingoWebAPI
 {
-    public class Program
+    public class Program1
     {
         public static void Main(string[] args)
         {
