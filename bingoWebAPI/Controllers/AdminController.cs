@@ -27,16 +27,6 @@ namespace bingoWebAPI.Controllers
       _hubContext = hubContext;
     }
 
-    [Description("Get Admin.")]
-    [SwaggerResponse(StatusCodes.Status200OK, typeof(void))]
-    [SwaggerResponse(StatusCodes.Status400BadRequest, typeof(ProblemDetails))]
-    [SwaggerResponse(StatusCodes.Status500InternalServerError, typeof(ProblemDetails))]
-    [HttpGet("testapi")]
-    public async Task<IActionResult> Test()
-    {
-            return Json("Hello");
-    }
-
     [Description("Insert Admin.")]
     [SwaggerResponse(StatusCodes.Status200OK, typeof(void))]
     [SwaggerResponse(StatusCodes.Status400BadRequest, typeof(ProblemDetails))]
