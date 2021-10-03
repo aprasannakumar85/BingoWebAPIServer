@@ -7,6 +7,7 @@ using Microsoft.OpenApi.Models;
 using bingoWebAPI.Connection;
 using FireSharp;
 using FireSharp.Interfaces;
+using Microsoft.AspNetCore.Http.Connections;
 
 namespace bingoWebAPI
 {
@@ -62,7 +63,10 @@ namespace bingoWebAPI
 
       app.UseEndpoints(endpoints =>
       {
-        endpoints.MapHub<BroadcastHub>("/notify");
+        endpoints.MapHub<BroadcastHub>("/notify",options =>
+        {
+            options.Transports = HttpTransportType.WebSockets | HttpTransportType.LongPolling;
+        });
       });
 
       app.UseEndpoints(endpoints =>
