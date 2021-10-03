@@ -65,7 +65,7 @@ namespace bingoWebAPI
       {
         endpoints.MapHub<BroadcastHub>("/notify",options =>
         {
-            options.Transports = HttpTransportType.WebSockets | HttpTransportType.LongPolling;
+            options.Transports = HttpTransportType.WebSockets & HttpTransportType.LongPolling;
         });
       });
 
